@@ -15,6 +15,7 @@ const app = express();
 const healthCheckRouter = require("./controllers/health-check-router.js");
 const testSearchRouter = require("./controllers/test-search-router");
 const { trySearch } = require("./services/test-search-service");
+const deleteAllRouter = require("./controllers/delete-all-documents-router.js");
 
 const options = {
     origin: "*",
@@ -34,6 +35,7 @@ const baseRouter = express.Router();
 // add all routers to base router
 baseRouter.use("/health-check", healthCheckRouter);
 baseRouter.use("/search", testSearchRouter);
+baseRouter.use("/delete-all", deleteAllRouter);
 
 //add baseRouter to app
 app.use("/elasticsearch", baseRouter);

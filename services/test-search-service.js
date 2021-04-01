@@ -13,7 +13,6 @@ const trySearch = async (req, res) => {
             }
         });
         res.send(result.body.hits);
-        // console.log("RESULT", result.body.hits);
     } catch (error) {
         console.log("THERE IS AN ERROR", error);
     }
